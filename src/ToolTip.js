@@ -6,14 +6,14 @@ export class ToolTip extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      position: 'right',
+      position: 'top',
       effect: 'solid',
     };
   }
 
   changePosition = (place) => {
     this.setState({
-      place,
+      position: place,
     });
   };
 
@@ -31,6 +31,7 @@ export class ToolTip extends Component {
         <div className="buttonContainer">
           <div
             className={`positionButton ${position === 'top' ? 'active' : ''}`}
+            onClick={this.changePosition.bind(this, 'top')}
           >
             <p>Top</p>
           </div>
@@ -38,16 +39,19 @@ export class ToolTip extends Component {
             className={`positionButton ${
               position === 'bottom' ? 'active' : ''
             }`}
+            onClick={this.changePosition.bind(this, 'bottom')}
           >
             <p>Bottom</p>
           </div>
           <div
             className={`positionButton ${position === 'left' ? 'active' : ''}`}
+            onClick={this.changePosition.bind(this, 'left')}
           >
             <p>Left</p>
           </div>
           <div
             className={`positionButton ${position === 'right' ? 'active' : ''}`}
+            onClick={this.changePosition.bind(this, 'right')}
           >
             <p>Right</p>
           </div>
