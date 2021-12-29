@@ -11,6 +11,7 @@ export class ToolTip extends Component {
     };
   }
 
+  // function to change position of tooltip
   changePosition = (place) => {
     this.setState({
       position: place,
@@ -25,10 +26,12 @@ export class ToolTip extends Component {
         <div className="hoverOverMe" data-tip data-for="tooltip">
           <p>Hover Over Me</p>
         </div>
+        {/* react tooltip which shows on hovering*/}
         <ReactTooltip id="tooltip" place={position} effect={effect}>
           Thanks for hovering this is a tooltip
         </ReactTooltip>
         <div className="buttonContainer">
+          {/* different positions for the tooltip */}
           <div
             className={`positionButton ${position === 'top' ? 'active' : ''}`}
             onClick={this.changePosition.bind(this, 'top')}
